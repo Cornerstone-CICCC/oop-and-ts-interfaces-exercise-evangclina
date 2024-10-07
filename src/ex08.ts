@@ -7,18 +7,20 @@ interface Address {
 }
 
 interface House {
-
+  address: {
+    city?: string
+  }
 }
 
-const myHouse = {
+const myHouse: House = {
   address: {
     city: "New York"
   }
 };
 
-console.log( );
+console.log(myHouse?.address?.city );
 // Expected Output: "New York"
 
-const noCityHouse = {};
-console.log( );
+const noCityHouse: House = {};
+console.log(noCityHouse?.address?.city ?? "City not available");
 // Expected Output: "City not available"
